@@ -1,0 +1,1 @@
+ check --init=Init --inv=IndInv --length=0 .\MC1.tla

@@ -1,0 +1,92 @@
+22:56:19.218 [main] INFO  a.f.a.t.Tool$ - Checker options: check --init=Init --inv=IndInv --length=0 .\MC1.tla
+22:56:19.218 [main] INFO  a.f.a.t.Tool$ - Tuning: 
+22:56:19.226 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #0: SanyParser
+22:56:19.693 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #0: SanyParser [OK]
+22:56:19.693 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #1: TypeCheckerSnowcat
+22:56:19.693 [main] INFO  a.f.a.t.t.p.EtcTypeCheckerPassImpl -  > Running Snowcat .::.
+22:56:20.142 [main] INFO  a.f.a.t.t.p.EtcTypeCheckerPassImpl -  > Your types are purrfect!
+22:56:20.142 [main] INFO  a.f.a.t.t.p.EtcTypeCheckerPassImpl -  > All expressions are typed
+22:56:20.142 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #1: TypeCheckerSnowcat [OK]
+22:56:20.144 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #2: ConfigurationPass
+22:56:20.149 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > MC1.cfg: Loading TLC configuration
+22:56:20.205 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > MC1.cfg: Using SPECIFICATION Spec
+22:56:20.206 [main] WARN  a.f.a.t.p.p.ConfigurationPassImpl -   > MC1.cfg: Init operator is set in TLC config but overridden via --init command line option; using Init
+22:56:20.206 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Using the next predicate Next from the TLC config
+22:56:20.206 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > MC1.cfg: found INVARIANTS: TypeOK, Unforg_Ltl
+22:56:20.206 [main] WARN  a.f.a.t.p.p.ConfigurationPassImpl -   > Overriding with command line arguments: --inv IndInv
+22:56:20.209 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the initialization predicate to Init
+22:56:20.209 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set the transition predicate to Next
+22:56:20.209 [main] INFO  a.f.a.t.p.p.ConfigurationPassImpl -   > Set an invariant to IndInv
+22:56:20.216 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #2: ConfigurationPass [OK]
+22:56:20.216 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #3: DesugarerPass
+22:56:20.216 [main] INFO  a.f.a.t.p.p.DesugarerPassImpl -   > Desugaring...
+22:56:20.234 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #3: DesugarerPass [OK]
+22:56:20.234 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #4: InlinePass
+22:56:20.234 [main] INFO  a.f.a.t.p.p.InlinePassImpl - Leaving only relevant operators: CInit, CInitPrimed, IndInv, Init, InitPrimed, Next
+22:56:20.318 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #4: InlinePass [OK]
+22:56:20.318 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #5: PrimingPass
+22:56:20.322 [main] INFO  a.f.a.t.a.p.PrimingPassImpl -   > Introducing CInitPrimed for CInit'
+22:56:20.322 [main] INFO  a.f.a.t.a.p.PrimingPassImpl -   > Introducing InitPrimed for Init'
+22:56:20.325 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #5: PrimingPass [OK]
+22:56:20.325 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #6: VCGen
+22:56:20.325 [main] INFO  a.f.a.t.b.p.VCGenPassImpl -   > Producing verification conditions from the invariant IndInv
+22:56:20.341 [main] INFO  a.f.a.t.b.VCGenerator -   > VCGen produced 9 verification condition(s)
+22:56:20.342 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #6: VCGen [OK]
+22:56:20.342 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #7: PreprocessingPass
+22:56:20.342 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Before preprocessing: unique renaming
+22:56:20.358 [main] INFO  a.f.a.t.p.p.PreproPassImpl -  > Applying standard transformations:
+22:56:20.360 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > PrimePropagation
+22:56:20.363 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Desugarer
+22:56:20.371 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > UniqueRenamer
+22:56:20.379 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Normalizer
+22:56:20.395 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > Keramelizer
+22:56:20.419 [main] INFO  a.f.a.t.p.p.PreproPassImpl -   > After preprocessing: UniqueRenamer
+22:56:20.435 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #7: PreprocessingPass [OK]
+22:56:20.435 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #8: TransitionFinderPass
+22:56:20.476 [main] INFO  a.f.a.t.a.p.TransitionPassImpl -   > Found 1 initializing transitions
+22:56:20.492 [main] INFO  a.f.a.t.a.p.TransitionPassImpl -   > Found 7 transitions
+22:56:20.492 [main] INFO  a.f.a.t.a.p.TransitionPassImpl -   > Found constant initializer CInit
+22:56:20.500 [main] INFO  a.f.a.t.a.p.TransitionPassImpl -   > Applying unique renaming
+22:56:20.510 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #8: TransitionFinderPass [OK]
+22:56:20.510 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #9: OptimizationPass
+22:56:20.516 [main] INFO  a.f.a.t.p.p.OptPassImpl -  > Applying optimizations:
+22:56:20.522 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > ConstSimplifier
+22:56:20.528 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > ExprOptimizer
+22:56:20.535 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > SetMembershipSimplifier
+22:56:20.537 [main] INFO  a.f.a.t.p.p.OptPassImpl -   > ConstSimplifier
+22:56:20.542 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #9: OptimizationPass [OK]
+22:56:20.542 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #10: AnalysisPass
+22:56:20.550 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -  > Marking skolemizable existentials and sets to be expanded...
+22:56:20.550 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Skolemization
+22:56:20.550 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Expansion
+22:56:20.555 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Remove unused let-in defs
+22:56:20.560 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -  > Running analyzers...
+22:56:20.566 [main] INFO  a.f.a.t.b.p.AnalysisPassImpl -   > Introduced expression grades
+22:56:20.566 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #10: AnalysisPass [OK]
+22:56:20.566 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #11: PostTypeCheckerSnowcat
+22:56:20.566 [main] INFO  a.f.a.t.b.p.PostTypeCheckerPassImpl -  > Running Snowcat .::.
+22:56:21.028 [main] INFO  a.f.a.t.b.p.PostTypeCheckerPassImpl -  > Your types are purrfect!
+22:56:21.028 [main] INFO  a.f.a.t.b.p.PostTypeCheckerPassImpl -  > All expressions are typed
+22:56:21.028 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #11: PostTypeCheckerSnowcat [OK]
+22:56:21.028 [main] INFO  a.f.a.i.p.PassChainExecutor - PASS #12: BoundedChecker
+22:56:21.333 [main] DEBUG a.f.a.t.b.t.TransitionExecutorImpl - Initializing CONSTANTS
+22:56:21.381 [main] DEBUG a.f.a.t.b.t.TransitionExecutorImpl - Step #0, transition #0
+22:56:21.381 [main] DEBUG a.f.a.t.b.t.TransitionExecutorImpl - Translating to SMT...
+22:56:21.433 [main] DEBUG a.f.a.t.b.SeqModelChecker - Step 0: Transition #0. Is it enabled?
+22:56:21.433 [main] DEBUG a.f.a.t.b.SeqModelChecker - Step 0: Transition #0 is enabled
+22:56:21.433 [main] INFO  a.f.a.t.b.SeqModelChecker - State 0: Checking 9 state invariants
+22:56:21.438 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 0
+22:56:21.454 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 1
+22:56:21.454 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 2
+22:56:21.454 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 3
+22:56:21.454 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 4
+22:56:21.466 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 5
+22:56:21.472 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 6
+22:56:21.495 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 7
+22:56:21.504 [main] DEBUG a.f.a.t.b.SeqModelChecker - State 0: Checking state invariant 8
+22:56:21.518 [main] INFO  a.f.a.t.b.t.TransitionExecutorImpl - Step 0: picking a transition out of 1 transition(s)
+22:56:21.522 [main] INFO  a.f.a.t.b.p.BoundedCheckerPassImpl - The outcome is: NoError
+22:56:21.522 [main] DEBUG a.f.a.i.p.PassChainExecutor - PASS #12: BoundedChecker [OK]
+22:56:21.522 [main] INFO  a.f.a.t.Tool$ - Checker reports no error up to computation length 0
+22:56:21.522 [main] INFO  a.f.a.t.Tool$ - It took me 0 days  0 hours  0 min  3 sec
+22:56:21.522 [main] INFO  a.f.a.t.Tool$ - Total time: 3.72 sec
